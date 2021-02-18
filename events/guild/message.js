@@ -17,13 +17,13 @@ module.exports = (Discord, client, message) =>{
 
     if(
         !message.guild
-        || message.content.indexOf(client.env.prefix) !==0
+        || message.content.indexOf(process.env.prefix) !==0
         || message.author.bot
     ) return;
 
 
 
-    const args = message.content.slice(client.env.prefix.length).trim().split(/ +/g);
+    const args = message.content.slice(process.env.prefix.length).trim().split(/ +/g);
     const cmd = args.shift().toLowerCase();
 
     const command = client.commands.get(cmd) ||
