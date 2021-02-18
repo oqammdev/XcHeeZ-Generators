@@ -22,7 +22,7 @@ client.generate = {
 }
 client.commands = new Discord.Collection();
 client.events = new Discord.Collection();
-client.prefix = client.env.prefix;
+client.prefix = process.env.prefix;
 
 
 
