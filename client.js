@@ -22,7 +22,6 @@ client.generate = {
 }
 client.commands = new Discord.Collection();
 client.events = new Discord.Collection();
-client.env = process.env;
 client.prefix = client.env.prefix;
 
 
@@ -33,7 +32,7 @@ client.prefix = client.env.prefix;
     require(`./handlers/${handler}`)(client, Discord)
 });
 
-client.login(client.env.token)
+client.login(process.env.token)
 
 
 
