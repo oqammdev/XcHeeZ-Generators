@@ -1,1 +1,1 @@
-Run : node .
+Run : node app.js
