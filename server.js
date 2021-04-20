@@ -14,3 +14,7 @@ app.get("/", async (request, response) =>{
 let code = await generateNitro()
 response.send(code)
 })
+
+app.listen(process.env.PORT, ()=>{
+    console.log("listening")
+})
