@@ -15,6 +15,6 @@ let code = await generateNitro()
 response.send(code)
 })
 
-app.listen(process.env.PORT, ()=>{
+app.listen(3000, ()=>{
     console.log("listening")
 })
