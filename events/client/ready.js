@@ -11,7 +11,7 @@ module.exports = (Discord, client) =>{
 		let channel = client.channels.resolve("834756888905121823")
 		let message  = await channel.messages.fetch("834757029788254248")
 		message.edit(`${client.ws.ping} ${duration}`)
-	})
+	}, 2000)
 	
 	 setInterval(async function(){
 const code = await client.generate.nitro()
