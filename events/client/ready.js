@@ -3,9 +3,16 @@ var proxyURL = "";
 var working = [];
 const ms = require("ms")
 var toMatch;
-
+const moment = require("moment")
 module.exports = (Discord, client) =>{
+	const duration = moment.duration(client.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
     console.log("Activated".yellow)
+	setInterval(async function(){
+		let channel = client.channels.resolve("834756888905121823")
+		let message  = await channel.messages.fetch("834757029788254248")
+		message.edit(`${client.ws.ping} ${duration}`)
+	}, 2000)
+	
 	 setInterval(async function(){
 const code = await client.generate.nitro()
 const ch = client.channels.resolve("812285030264602644")
