@@ -4,6 +4,7 @@ var working = [];
 const ms = require("ms")
 var toMatch;
 const moment = require("moment")
+const m = require("moment-duration-format");
 module.exports = (Discord, client) =>{
 	const duration = moment.duration(client.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
     console.log("Activated".yellow)
