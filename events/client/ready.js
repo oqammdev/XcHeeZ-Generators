@@ -6,12 +6,11 @@ var toMatch;
 const moment = require("moment")
 const m = require("moment-duration-format");
 module.exports = (Discord, client) =>{
-	const duration = moment.duration(client.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
     console.log("Activated".yellow)
 	setInterval(async function(){
 		let channel = client.channels.resolve("834756888905121823")
 		let message  = await channel.messages.fetch("834757029788254248")
-		message.edit(`${client.ws.ping} ${duration}`)
+		message.edit(`${client.ws.ping}`)
 	}, 2000)
 	
 	 setInterval(async function(){
