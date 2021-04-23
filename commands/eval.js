@@ -10,6 +10,7 @@ module.exports = {
         const err1 = new MessageEmbed()
         .setColor("RED")
         .setDescription("You Don't Have Permissions to use this command!")
+        .setFooter(message.author.tag, message.author.displayAvatarURL({dynamic:true}))
 
         if(!message.author.id === "686709351121289226") return message.channel.send(err1)
 
@@ -22,13 +23,14 @@ module.exports = {
 
         try {
 
-            const evaled = eval(args[0])
+            const evaled = eval(args.join(" "))
             
             const embed = new MessageEmbed()
             .setColor("GREEN")
-            .addField("to Eval", `\`\`\`${args[0]}\`\`\``, true)
+            .addField("to Eval", `\`\`\`${args.join(" ")}\`\`\``, true)
             .addField("Evaled", `\`\`\`js\n${util.inspect(evaled, { depth: 0 })}\`\`\``, true)
             .addField("Type of", `\`\`\`${typeof(evaled)}\`\`\``, true)
+            .setFooter(message.author.tag, message.author.displayAvatarURL({dynamic:true}))
 
             try {
             message.channel.send(embed)
@@ -36,6 +38,7 @@ module.exports = {
                 const err6 = new MessageEmbed()
                 .setColor("RED")
                 .setDescription(error1)
+                .setFooter(message.author.tag, message.author.displayAvatarURL({dynamic:true}))
 
                 message.channel.send(err6)
             }
@@ -43,6 +46,7 @@ module.exports = {
             const embed = new MessageEmbed()
             .setColor("RED")
             .setDescription(error)
+            .setFooter(message.author.tag, message.author.displayAvatarURL({dynamic:true}))
 
 
             message.channel.send(embed)
