@@ -16,6 +16,7 @@ module.exports = {
         const err = new MessageEmbed()
         .setColor("RED")
         .setDescription(`You Need to Specify Something to Eval!`)
+        .setFooter(message.author.tag, message.author.displayAvatarURL({dynamic:true}))
         if(!args.length) return message.channel.send(err)
         
 
