@@ -14,7 +14,7 @@ module.exports = {
         let lastID;
         let number;
         if(!args[0]) args[0] = 10;
-        if(!parseInt(args[0]) args[0] = 10;
+        if(!parseInt(args[0])) args[0] = 10;
         if(parseInt(args[0]) > 100) args[0] = 100;
         number = parseInt(args[0]);
         const channel = client.channels.resolve("812285030264602644")
