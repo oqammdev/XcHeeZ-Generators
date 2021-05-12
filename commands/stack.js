@@ -31,7 +31,7 @@ module.exports = {
         lastID = fetchedMessages.lastKey();
       
       let embed = new MessageEmbed()
-      .setDescription(messages.map(m => m.content).join("\n").slice(0, number)
+      .setDescription(messages.map(m => m.content).join("\n").slice(0, number))
       .setColor("BLUE")
                       message.channel.send(embed)
       
