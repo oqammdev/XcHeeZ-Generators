@@ -23,10 +23,10 @@ module.exports = {
             ...(lastID && { before: lastID }),
         });
       
-      if (fetchedMessages.size === 0) {
-        messages = messages.filter(msg => msg.author.bot).slice(0, number);
-        return messages;
-      }
+      
+        messages = messages.filter(msg => msg.author.bot);
+        
+      
         messages = messages.concat(Array.from(fetchedMessages.values()));
         lastID = fetchedMessages.lastKey();
       
