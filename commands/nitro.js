@@ -6,7 +6,7 @@ const db = require("quick.db")
 
 module.exports = {
     name: "nitro",
-    description: "Generate a Discord Nitro Code.",
+    description: "Generate a Discord Nitro code.",
     aliases: ["dn", "discord-nitro"],
     usage: `${process.env.prefix}${this.name}`,
     async excute(message, args, cmd, client, Discord){
@@ -17,11 +17,11 @@ module.exports = {
     
 
         const ES = new MessageEmbed()
-        .setDescription(`**Discord Nitro Code Generated, Check Your DMs!**`)
+        .setDescription(`**Discord Nitro code generated, check your DMs!**`)
         .setColor("GREEN")
 
         const EU = new MessageEmbed()
-        .setDescription(`**I'm Unable to Send your Discord Nitro Code, make sure Your DMs Are on!**`)
+        .setDescription(`**I'm unable to send your Discord Nitro code, make sure your DMs are on!**`)
         .setColor("RED")
         const msg = await message.channel.send("**Generating Code...**")
 
@@ -36,7 +36,6 @@ module.exports = {
             msg.edit("", ES)
         }).catch((err) =>{
             msg.edit("", EU)
-            console.log(err)
         })
     
 
