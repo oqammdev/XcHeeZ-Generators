@@ -18,11 +18,11 @@ module.exports = {
         let number = parseInt(args[0])
 
         const ES = new MessageEmbed()
-        .setDescription(`**Discord Nitro Codes Generated, Check Your DMs!**`)
+        .setDescription(`**Discord Nitro codes generated, check your DMs!**`)
         .setColor("GREEN")
 
         const EU = new MessageEmbed()
-        .setDescription(`**I'm Unable to Send your Discord Nitro Code, make sure Your DMs Are on!**`)
+        .setDescription(`**I'm unable to send your Discord Nitro code, make sure your DMs are on!**`)
         .setColor("RED")
         const msg = await message.channel.send("**Generating Code...**")
 
@@ -38,7 +38,6 @@ module.exports = {
             msg.edit("", ES)
         }).catch((err) =>{
             msg.edit("", EU)
-            console.log(err)
         })
 
 
