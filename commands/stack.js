@@ -10,8 +10,7 @@ module.exports = {
     aliases: [],
     usage: `${process.env.prefix}${this.name}`,
     async excute(message, args, cmd, client, Discord){
-        const dfa = require("discord-fetch-all")
-        let allMsgs = await dfa.messages(client.channels.resolve("812285030264602644"))
+        let allMsgs = await client.channels.cache.get("812285030264602644").messages.fetch()
         if(!args[0]) args[0] = 10;
         if(args[0] > 100) args[0] = 100;
         if(args[0] < 1) args[0] = 1
@@ -29,7 +28,7 @@ module.exports = {
         
         const embed = new MessageEmbed()
         .setTitle("Here are Your Codes")
-        .setDescription(allMsgs.map(m => m.content).slice(0, number).join("/n"))
+        .setDescription(allMsgs.slice(0, number).map(m => m.content).join("/n"))
         .setColor("YELLOW")
 
         
