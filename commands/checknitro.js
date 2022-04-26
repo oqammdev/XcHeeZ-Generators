@@ -16,7 +16,7 @@ module.exports = {
         const code = args[0]
         
 
-        if(!code) return message.channel.send("You need to specify a Nitro Code.")
+        if(!code) return message.channel.send("You need to specify a Nitro code.")
         checkNitroCode(code, message)
         async function checkNitroCode(code = "", message = new Message()){
             const embed = new MessageEmbed()
