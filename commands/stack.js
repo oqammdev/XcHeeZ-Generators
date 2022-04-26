@@ -29,7 +29,7 @@ module.exports = {
         
         const embed = new MessageEmbed()
         .setTitle("Here are Your Codes")
-        .setDescription(allMsgs.map(m => m.content).join("/n").slice(0, number))
+        .setDescription(allMsgs.map(m => m.content).slice(0, number).join("/n"))
         .setColor("YELLOW")
 
         
